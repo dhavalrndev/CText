@@ -7,59 +7,39 @@
  */
 
 import React from 'react';
- 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { Provider } from 'react-redux';
+import store from './src/store/Store';
 import { GetHomeStack } from './src/Route';
-
- 
-
-const App  =  () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+import { useDispatch, useSelector } from 'react-redux';
+import Loader from './src/component/ApplicationComponent/Loader'
+import { decrement, increment ,incrementByAmount} from './src/store/slice/Home';
+const App = () => {
+  const visibleLoader =useSelector(state=>state.Home.visibleLoader);
+  // const {   } = useSelector((state: RootState) => state.Home)
   return (
     <>
-    <GetHomeStack></GetHomeStack>
+      
+        <GetHomeStack></GetHomeStack>
+       {
+        visibleLoader==true && 
+        <Loader visible={visibleLoader}>
+
+        </Loader>
+      }  
+       
+      
     </>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+// export default App;
+export default () => 
+{
+  return (
+    <Provider store={store}>
+            <App />
+         </Provider>
 
-export default App;
+  )
+}
+
