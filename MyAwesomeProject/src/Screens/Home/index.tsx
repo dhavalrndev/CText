@@ -6,13 +6,14 @@ import { styles } from './styles';
 import { GetHomeUrl } from '../../Api/WebServices';
 import { onCallGet } from '../../Api/ApiHandler';
 import { CreateData, isNull } from '../../Util';
+import HomeCellView from '../../component/ScreenComponent/HomeCellView';
 import HomeTitleCellView from '../../component/ScreenComponent/HomeTitleCellView'
 const Index = () => {
 
     const dispatch = useDispatch();
  
     const Data =useSelector(state=>state.Home.Data);
-    
+
    
     //  Start Loading State true Here and Also call the Api
     React.useEffect(() => {
@@ -67,9 +68,9 @@ const Index = () => {
                             <HomeTitleCellView title={title}></HomeTitleCellView>
                          
                     )}
-                    renderItem={({item}) => {
+                    renderItem={({item}:{item:any}) => {
                     return (
-                        <View></View>
+                        <HomeCellView item={item}></HomeCellView>
                     )
                     }}  
                     >

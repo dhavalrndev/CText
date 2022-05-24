@@ -1,6 +1,6 @@
 import Moment from 'moment';
 import { format } from "date-fns";
-import RNDateFormat from 'react-native-date-format';
+ 
 
 export const getDateTitle=(data:any)=>{
 
@@ -33,21 +33,23 @@ export const getDateTitle=(data:any)=>{
             console.log(" date-- ",date1)
             console.log(" month ",month)
             console.log(" year ",year)
+            let finaldateis=month+"/"+date1+"/"+year;
 
 
             // Moment.locale('en');
-            // let date = new Date(data.trim());
+            let date = new Date(finaldateis.trim());
             // console.log(" data ",date)
-            // // let formattedDate = format(date, "MMMM do, yyyy H:mma");
-            // // let formattedDate = Moment(date).format('d MMM')
-            
-            // // return formattedDate+data
+            //  let formattedDate = format(date, "MM/DD/YYYY");
+            //  let formattedDate = Moment(finaldateis).format('MM/DD/YYYY')
+            let formattedDate = Moment(finaldateis).format('dd  DD MMM. YYYY')
+
+            return formattedDate?.toString()?.toLowerCase()
 
 
             // let datespass=new Date(data);
             // console.log(" datapass ",datespass)
-            // return  Moment(datespass).format("DD-MMM-YYYY hh:mm")+data
-return data
+            //  return  Moment(datespass).format("DD-MMM-YYYY hh:mm")+data
+            // return data
       }catch(exc)
       {
             return ""
