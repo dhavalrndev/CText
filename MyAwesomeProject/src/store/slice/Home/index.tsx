@@ -10,6 +10,7 @@ export const Index = createSlice({
   reducers: {
 
     setData: (state, action) => {
+      console.log(" payload",action.payload)
         state.Data=action.payload
     },
 

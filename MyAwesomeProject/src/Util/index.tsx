@@ -28,5 +28,38 @@ export function isNull(data:any) {
           console.log(error)
           return false;
     }
+}
 
+
+export const CreateData=(Data:any)=>
+{
+      const MainData:any=[];
+      try{
+            Data?.forEach((element:any) => {                   
+                  let datavailable=MainData.some((item:any)=>item.title===element?.Date);
+                  // console.log(" data is way ",element)
+                  if(datavailable===false)
+                  {
+                        const Object:any={};
+                        const data:any=[]
+                        Object["title"]=element.Date;
+                        data.push(element);
+                        Object["data"]=data
+                        MainData.push(Object)
+                  }else{
+                        // const findpostObj=MainData.find((child:any)=>child.title === element?.Date)
+                        const index = MainData.findIndex((childitem:any) => childitem.title === element?.Date);
+                        console.log(" vindex ",index)
+                        if(index>=0)
+                        {
+                              MainData[index]?.data?.push(element);
+                        }
+                  }
+            }); 
+      }catch(exc)
+      {
+            console.log(" exc ",exc);
+            return MainData;
+      }
+      return MainData;
 }

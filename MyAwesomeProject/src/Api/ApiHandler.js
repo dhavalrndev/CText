@@ -38,25 +38,8 @@ const onCheckJsonData=(response)=>
 
 const onSuccess=(response,callBack)=>{
       try{
-            if (isNull(response?.data?.status) == true && (response?.data?.status === 0)) {
-                  console.log(" message1 ")
-                  debugger
-                  if (response?.data != null && response?.data != undefined &&
-                        response?.data?.message != null && response?.data?.message != undefined) {
-                        return callBack({
-                              success: false,
-                              errorMessage: isNull(response?.data?.message) == true ? response.data.message : label_some_thing_is_wrong,
-                              data: response.data
-                        })
-                  } else {
-                        return callBack({
-                              success: false,
-                              errorMessage: isNull(response?.data?.message) == true ? response.data.message : label_some_thing_is_wrong,
-                              data: response.data
-                        })
-                  }
-
-            } else if (response?.status == 200 && isNull(response?.data?.status) == true && (response?.data?.status == 1)) {
+           
+            if (response?.status == 200 && isNull(response?.data) == true  ) {
                   console.log(" message2 ")
                   debugger
                   return callBack({
@@ -74,8 +57,7 @@ const onSuccess=(response,callBack)=>{
             }
       }catch(exc)
       {
-            console.log(" the error is follow now ", error);
-            // if (callBack != null && callBack != undefined) {
+          
 
             debugger
             return callBack({
