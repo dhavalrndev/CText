@@ -6,6 +6,7 @@ import { styles } from './styles';
 import { GetHomeUrl } from '../../Api/WebServices';
 import { onCallGet } from '../../Api/ApiHandler';
 import { CreateData, isNull } from '../../Util';
+import HomeTitleCellView from '../../component/ScreenComponent/HomeTitleCellView'
 const Index = () => {
 
     const dispatch = useDispatch();
@@ -54,6 +55,27 @@ const Index = () => {
     return (
         <SafeAreaView style={styles.SafeareaStyle}>
             <View style={styles.MainViewStyle}>
+                {
+                    MainData?.length>0 && 
+                    <SectionList
+                    sections={MainData}
+
+                    keyExtractor={(index:number)=>index.toString()}
+
+                    renderSectionHeader={({ section: { title } }) =>(
+                        
+                            <HomeTitleCellView title={title}></HomeTitleCellView>
+                         
+                    )}
+                    renderItem={({item}) => {
+                    return (
+                        <View></View>
+                    )
+                    }}  
+                    >
+
+                    </SectionList>
+                }
             </View>
         </SafeAreaView>
     )

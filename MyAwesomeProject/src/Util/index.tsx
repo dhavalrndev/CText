@@ -1,3 +1,58 @@
+import Moment from 'moment';
+import { format } from "date-fns";
+import RNDateFormat from 'react-native-date-format';
+
+export const getDateTitle=(data:any)=>{
+
+      try
+      {
+
+            // RNDateFormat.formatDate(data.toString(),
+            // "dd/MM/yyyy", "yyyy-MM-dd",
+            // ({formatedDate :string}) => {
+            //      console.log(" formatedDate",formatedDate);
+            //         }
+            //  )
+            // data="13/07/2022"
+            
+            
+            if(data?.length>=6)
+            {
+                  let date=data?.toString().substring(0, 2); 
+                  let month=data?.toString().substring(3, 4); 
+                  let year=data?.toString().substring(6, 9); 
+
+                  console.log(" month ",date)
+                  console.log(" month ",month)
+                  console.log(" year ",year)
+            }
+            let date1=data?.toString().substring(0, 2); 
+            let month=data?.toString().substring(3, 5); 
+            let year=data?.toString().substring(6, 10); 
+
+            console.log(" date-- ",date1)
+            console.log(" month ",month)
+            console.log(" year ",year)
+
+
+            // Moment.locale('en');
+            // let date = new Date(data.trim());
+            // console.log(" data ",date)
+            // // let formattedDate = format(date, "MMMM do, yyyy H:mma");
+            // // let formattedDate = Moment(date).format('d MMM')
+            
+            // // return formattedDate+data
+
+
+            // let datespass=new Date(data);
+            // console.log(" datapass ",datespass)
+            // return  Moment(datespass).format("DD-MMM-YYYY hh:mm")+data
+return data
+      }catch(exc)
+      {
+            return ""
+      }
+}
 export const getFirstCharacter = (name:string) => {
     try {
           if (isNull(name) == true) {

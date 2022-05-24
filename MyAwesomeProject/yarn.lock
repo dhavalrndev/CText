@@ -1301,7 +1301,7 @@
 
 "@react-native-community/netinfo@^8.3.0":
   version "8.3.0"
-  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-8.3.0.tgz#e3d19381c7d9f885b44ea1785ed892bc39c4b0f1"
+  resolved "https://registry.npmjs.org/@react-native-community/netinfo/-/netinfo-8.3.0.tgz"
   integrity sha512-VlmjD7Vg1BacbNhwuJCel1eeD8N2Ps6BEcZe9qoSoeIptpCbC86o4ZqD0meSjJzioKSvgalrkmPgMaVYsVipKw==
 
 "@react-native/assets@1.0.0":
@@ -1874,7 +1874,7 @@ atob@^2.1.2:
 
 axios@^0.27.2:
   version "0.27.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
+  resolved "https://registry.npmjs.org/axios/-/axios-0.27.2.tgz"
   integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
   dependencies:
     follow-redirects "^1.14.9"
@@ -2477,6 +2477,11 @@ csstype@^3.0.2:
   version "3.1.0"
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.0.tgz"
   integrity sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==
+
+date-fns@^2.28.0:
+  version "2.28.0"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.28.0.tgz"
+  integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
 
 dayjs@^1.8.15:
   version "1.11.2"
@@ -5024,6 +5029,11 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.6"
 
+moment@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.npmjs.org/moment/-/moment-2.29.3.tgz"
+  integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
@@ -5613,6 +5623,16 @@ react-native-codegen@^0.0.17:
     flow-parser "^0.121.0"
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
+
+react-native-date-format@^1.1.30:
+  version "1.1.30"
+  resolved "https://registry.yarnpkg.com/react-native-date-format/-/react-native-date-format-1.1.30.tgz#3d6b99b584120593d0b434db639ffe28ac37870c"
+  integrity sha512-IzP4xTBYQQZBPFVUXQhhhu1FmdeDdDHT3eMMD9Na+sRfbB5RNKuXg+oAH6nk0LFQYWyq0KG7pd7IZmPEqeMpUA==
+
+react-native-fontawesome@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npmjs.org/react-native-fontawesome/-/react-native-fontawesome-7.0.0.tgz"
+  integrity sha512-UBZXyTLO8rK2NMf7Eomzb70b6cpL5JlBI4xwJGnRroRofrIXUxPelmm0Ojs6OcMs4ucAyPidCOxbJDJlmb2vdA==
 
 react-native-gradle-plugin@^0.0.6:
   version "0.0.6"
