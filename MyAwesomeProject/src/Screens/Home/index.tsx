@@ -60,6 +60,8 @@ const Index = () => {
                     MainData?.length>0 && 
                     <SectionList
                     sections={MainData}
+                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}
 
                     keyExtractor={(index:number)=>index.toString()}
 
