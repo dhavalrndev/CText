@@ -1,35 +1,29 @@
 import React, { } from 'react';
 import { StyleSheet,Platform } from 'react-native';
 import { dark_gray, primary_color } from '../../../Util/Colors';
-import { Poppins_Medium } from '../../../Util/Fonts';
+// import { Poppins_Medium } from '../../../Util/Fonts';
 import { normalize } from '../../../Util';
+import { deviceBasedDynamicDimension } from '../../../Util/ApplicationSpace';
 
 const style = StyleSheet.create({
           darkGreyBOld: {
-                    color: dark_gray,
-                    fontSize: normalize(12),
-                    fontFamily: Poppins_Medium,
-                    // marginTop: 15,
-                    // height:55,
-                    // marginBottom:1,
+                    color: "gray",
+                    fontSize: deviceBasedDynamicDimension(14,true,1),
+                    lineHeight: deviceBasedDynamicDimension(14,true,1),
                     alignSelf: 'center',
-                    // backgroundColor: 'red'
+                    fontWeight:'800'
+                    
           },
           cardstyle: {
-                    // borderTopLeftRadius: 14,
-                    // borderBottomLeftRadius: 14,
+                    
 
                     alignContent: 'center',
                     justifyContent: 'center',
-                    // borderLeftColor:'gray',
-
-                    // borderLeftWidth:4,
+                    
                     elevation: 5,
                     flex: 1,
                     shadowRadius: 0,
-                    // shadowOffset:0,
-                    // shadowRadius:0,
-                    // borderRadius: 14,
+                    
                     borderTopRightRadius: 10,
                     borderBottomRightRadius: 10,
                     marginHorizontal: 0, flex: 1,
@@ -57,7 +51,7 @@ const style = StyleSheet.create({
           lineUpView: {
                     width: 4,
                     height: '100%',
-                    backgroundColor: primary_color,
+                    backgroundColor: "green",
                     borderTopLeftRadius: 14,
                     borderBottomLeftRadius: 14,
                     // borderRadius: 14,

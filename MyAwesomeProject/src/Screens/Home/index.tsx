@@ -8,8 +8,11 @@ import { onCallGet } from '../../Api/ApiHandler';
 import { CreateData, isNull } from '../../Util';
 import HomeCellView from '../../component/ScreenComponent/HomeCellView';
 import HomeTitleCellView from '../../component/ScreenComponent/HomeTitleCellView'
+import { DetailScreenName } from '../../Route/FileNames';
+
+import NoDataAvailable from '../../component/ApplicationComponent/NoDataAvailable'
 // import { RefreshControl } from 'react-native';
-const Index = () => {
+const Index = ({navigation}:{navigation:any}) => {
 
     const dispatch = useDispatch();
 
@@ -94,7 +97,7 @@ const Index = () => {
 
                             showsHorizontalScrollIndicator={false}
 
-                            keyExtractor={(index: number) => index.toString()}
+                            keyExtractor={(index: number,item:any) => index.toString()+item.toString()}
 
                             renderSectionHeader={({ section: { title } }) => (
 
@@ -103,7 +106,14 @@ const Index = () => {
                             )}
                             renderItem={({ item }: { item: any }) => {
                                 return (
-                                    <HomeCellView  item={item}></HomeCellView>
+                                    <HomeCellView 
+                                    callBack={(item:any)=>{
+
+                                        if(isNull(item)==true)
+                                        {
+                                            navigation?.navigate(DetailScreenName,{item})
+                                        }
+                                    }} item={item}></HomeCellView>
                                 )
                             }}
                         >
@@ -111,6 +121,11 @@ const Index = () => {
                         </SectionList>
                     </RefreshControl>
 
+                }
+
+                {
+                    MainData?.length==0 &&
+                    <NoDataAvailable></NoDataAvailable>
                 }
             </View>
         </SafeAreaView>

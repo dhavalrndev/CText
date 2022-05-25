@@ -102,6 +102,7 @@ export const onCallGet = async (url, headersParams, callBack) => {
                   })
             }
 
+            console.log("isConnected",isConnected)
             Api.get(url, {
                   timeout: timeout,
                   headers: {

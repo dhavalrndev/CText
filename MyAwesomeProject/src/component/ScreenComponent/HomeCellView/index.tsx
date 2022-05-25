@@ -31,68 +31,76 @@ const index = (props: any) => {
                 setImageType("StandBy")
                 setDestHoldName(props?.item?.Destination);
                 setDestName("StandBy")
-                setTravelTime(  "02:00 - 02:00")
+                setTravelTime("02:00 - 02:00")
             }
         }
     }, []);
 
     console.log(" props ", props?.item)
     return (
-        <View style={style.MainView}>
+        <TouchableOpacity onPress={()=>{
+            if(ImageType!=="OFF" && ImageType!=="" && isNull(ImageType)==true &&  props?.callBack!=null && props?.callBack!=undefined)
+            {
+                props?.callBack(props?.item);
+            }
+            
+        }} activeOpacity={0.5}>
+            <View style={style.MainView}>
 
-            <View style={style.ChildOne}>
+                <View style={style.ChildOne}>
 
-                {
-                    ImageType === "FLIGHT" &&
+                    {
+                        ImageType === "FLIGHT" &&
 
-                    <Icon name="plane" size={30} color="#000000" />
-                }
-
-
-                {
-                    ImageType === "LAYOVER" &&
-                    <Icon name="suitcase" size={30} color="#000000" />
-
-
-                }
-
-
-                {
-                    ImageType === "StandBy" &&
-                    <Icon name="calendar-o" size={30} color="#000000" />
+                        <Icon name="plane" size={30} color="#000000" />
+                    }
 
 
-                }
+                    {
+                        ImageType === "LAYOVER" &&
+                        <Icon name="suitcase" size={30} color="#000000" />
 
+
+                    }
+
+
+                    {
+                        ImageType === "StandBy" &&
+                        <Icon name="calendar-o" size={30} color="#000000" />
+
+
+                    }
+
+                </View>
+
+                <View style={style.ChildSecond}>
+
+                    {
+                        ImageType !== "OFF" ?
+                            <Text style={styles.TextStyle}>{DestName}</Text> :
+                            <Text style={styles.TextStyle}>Today is your Off</Text>
+                    }
+
+
+
+                    {
+                        isNull(DestHoldName) == true && ImageType !== "OFF" &&
+                        <Text style={[styles.DestTextStyle, { marginVertical: 0 }]}>{DestHoldName}</Text>
+                    }
+
+                </View>
+                <View style={style.ChildThird}>
+                    {/* <Text style={styles.TextStyle}>{DestName}</Text> */}
+
+
+                    {ImageType !== "OFF" &&
+                        <Text style={style.TextTimeStyle}>{TravelTime}</Text>
+                    }
+
+
+                </View>
             </View>
-
-            <View style={style.ChildSecond}>
-
-                {
-                    ImageType !== "OFF" ?
-                        <Text style={styles.TextStyle}>{DestName}</Text> :
-                        <Text style={styles.TextStyle}>Today is your Off</Text>
-                }
-
-
-
-                {
-                    isNull(DestHoldName) == true && ImageType !== "OFF" &&
-                    <Text style={[styles.DestTextStyle, { marginVertical: 0 }]}>{DestHoldName}</Text>
-                }
-
-            </View>
-            <View style={style.ChildThird}>
-                {/* <Text style={styles.TextStyle}>{DestName}</Text> */}
-
-
-                {ImageType !== "OFF" &&
-                    <Text style={style.TextTimeStyle}>{TravelTime}</Text>
-                }
-
-
-            </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

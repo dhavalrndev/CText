@@ -7,7 +7,7 @@ import {
   Platform,
 } from 'react-native';
 
-const Card = props => {
+const Card = (props:any) => {
   const { children, elevation, opacity, cornerRadius } = props;
 
   const cardStyle = Platform.select({
