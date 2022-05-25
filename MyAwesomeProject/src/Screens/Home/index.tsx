@@ -103,7 +103,7 @@ const Index = () => {
                             )}
                             renderItem={({ item }: { item: any }) => {
                                 return (
-                                    <HomeCellView item={item}></HomeCellView>
+                                    <HomeCellView  item={item}></HomeCellView>
                                 )
                             }}
                         >
